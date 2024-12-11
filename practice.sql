@@ -116,7 +116,7 @@ WHERE
 -- 問14
 -- 全ての地方をグループ化せずに表示してください。
 SELECT
-    region
+    distinct region
 FROM
     countries;
 
@@ -133,7 +133,7 @@ SELECT
 FROM
     countries 
 WHERE
-    life_expectancy > 1
+    life_expectancy IS NOT NULL
 ORDER BY
     life_expectancy ASC;
 
@@ -144,7 +144,7 @@ SELECT
 FROM
     countries 
 WHERE
-    life_expectancy > 1 
+    life_expectancy IS NOT NULL
 ORDER BY
     life_expectancy DESC;
 
@@ -313,8 +313,7 @@ SELECT
 FROM
     celebrities
 WHERE
-    birth
-BETWEEN '1981-01-01' AND '1981-12-31';
+    birth BETWEEN '1981-01-01' AND '1981-12-31';
 
 -- 問32
 -- 有名人の出身国の平均年齢を高い方から順に表示してください。ただし、FROM句はcountriesテーブルとしてください。
@@ -328,3 +327,4 @@ ON
     c.code = ce.country_code
 ORDER BY
     c.life_expectancy DESC;
+    
