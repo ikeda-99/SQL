@@ -328,3 +328,4 @@ ON
     c.code = ce.country_code
 ORDER BY
     c.life_expectancy DESC;
+    
